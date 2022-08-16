@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-birds = pd.read_csv(r"data/falsiot/falsiot_plot.csv")
+birds = pd.read_csv(r"data/oreneta_v/oreneta_v_plot.csv")
 
 birds_grouped = birds.groupby(by=["month", "year"], dropna=False).sum()
 

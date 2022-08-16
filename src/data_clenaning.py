@@ -2,10 +2,10 @@ import pandas as pd
 from trans2UTM import project
 
 #Which species
-esp = "falsiot"
+esp = "oreneta_v"
 
 # Read data from different files of falsiot.
-df = pd.read_csv(f"../data/{esp}/Apusapus.csv", sep=";")
+df = pd.read_csv(f"../data/{esp}/oreneta_v.csv", sep=";")
 
 # Change dtype
 df["Data_obs"] = pd.to_datetime(df["Data_obs"])
@@ -13,11 +13,12 @@ df["Data_obs"] = pd.to_datetime(df["Data_obs"])
 m_groups = df.groupby(df['Data_obs'].dt.strftime('%B'))
 
 df["month"] = df["Data_obs"].dt.month
+df["year"] = df["Data_obs"].dt.year
 
-df["name_month"] = df.apply(lambda row: f"Apus_apus_{row['month']}", axis=1)
+df["name_month"] = df.apply(lambda row: f"oreneta_v_{row['month']}", axis=1)
 
 
-df = df[(2 <= df["month"]) & (df["month"] <= 6)]
+# df = df[(2 <= df["month"]) & (df["month"] <= 6)]
 
 
 # m_groups.groups.keys()
@@ -37,10 +38,10 @@ for l in range(0, len(df)):
 df.drop('Grup_taxon', inplace=True, axis=1)
 df.drop('Data_obs', inplace=True, axis=1)
 # df.drop('N_indi', inplace=True, axis=1)
-df.drop('N_obs', inplace=True, axis=1)
+# df.drop('N_obs', inplace=True, axis=1)
 df.drop('Nom_cat', inplace=True, axis=1)
 df.drop('Nom_cien', inplace=True, axis=1)
-df.drop('month', inplace=True, axis=1)
+# df.drop('month', inplace=True, axis=1)
 df.drop('x', inplace=True, axis=1)
 df.drop('y', inplace=True, axis=1)
 #
@@ -55,7 +56,7 @@ df["y_UTM"] = y_utm_list
 #
 # # Save dataframe in csv file.
 
-df = df[["name_month", "x_UTM", "y_UTM", "N_indi"]]
-df.to_csv(f"data/falsiot/falsiot_map.csv", index=False)
+df = df[["name_month", "x_UTM", "y_UTM", "N_indi", "month", "year", "N_obs"]]
+df.to_csv(f"data/oreneta_v/oreneta_v_plot.csv", index=False)
 
 
