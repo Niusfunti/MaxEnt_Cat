@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from itertools import cycle, islice
 
-birds = pd.read_csv(r"data/falsiot/falsiot_plot.csv")
+birds = pd.read_csv(r"data/abellerol/abellerol_plot_indi.csv")
 
 birds_grouped = birds.groupby(by=["month", "year"], dropna=False).sum()
 
