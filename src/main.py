@@ -6,7 +6,7 @@ from shapely.geometry import Point, MultiLineString
 from shapely.ops import polygonize
 from sklearn.model_selection import train_test_split
 
-input = "data/aligot/aligot_maxent.csv"
+input = "data/falsiot/falsiot_maxent.csv"
 
 data = pd.read_csv(input)
 points = gpd.GeoDataFrame({"x": data["x_UTM"].values, "y": data["y_UTM"].values})
