@@ -2,10 +2,10 @@ import pandas as pd
 from trans2UTM import project
 
 #Which species
-esp = "falsiot"
+esp = "abellerol"
 
 # Read data from different files of species.
-df = pd.read_csv(f"../data/{esp}/apusapus.csv", sep=";")
+df = pd.read_csv(f"../data/{esp}/abellerol.csv", sep=";")
 
 # Change dtype
 df["Data_obs"] = pd.to_datetime(df["Data_obs"])
