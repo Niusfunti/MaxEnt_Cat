@@ -20,8 +20,8 @@ colors = {
     "aligot": "#e0ee22",
     "falsiot": "#07d273",
     "mastegatatxes": "#ee8413",
-    "oreneta_c": "#72e61f",
-    "oreneta_v": "#ec81bf"
+    "oreneta_c": "#ec81bf",
+    "oreneta_v": "#72e61f"
 }
 
 names = {
@@ -33,7 +33,7 @@ names = {
     "oreneta_v": "Oreneta vulgar"
 }
 
-for esp in ["abellerol", "aligot", "falsiot", "mastegatatxes", "oreneta_c", "oreneta_v"]:
+for esp in ["abellerol", "aligot", "falsiot", "oreneta_c"]:
     data = pd.read_csv(f"data/{esp}/{esp}_plot.csv")
     birds_grouped = data.groupby(by=["month", "year"], dropna=False).sum()
     birds_grouped["month_year"] = birds_grouped.index
@@ -55,7 +55,7 @@ b.set_xticklabels(["January", "February", "March", "April", "May", "June", "July
 b.set_yticklabels(b.get_yticks(), fontsize= "small")
 
 b.set_xlabel("Mes", fontsize="medium")
-b.set_ylabel("Número d'observacions",fontsize="medium")
+b.set_ylabel("Nombre d'observacions",fontsize="medium")
 
 # my_colors = list(islice(cycle(['b', 'r', 'g', 'y', 'k', 'p']), None, len("year")))
 

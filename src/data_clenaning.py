@@ -2,10 +2,10 @@ import pandas as pd
 from trans2UTM import project
 
 #Which species
-esp = "abellerol"
+esp = "aligot"
 
 # Read data from different files of species.
-df = pd.read_csv(f"../data/{esp}/abellerol.csv", sep=";")
+df = pd.read_csv(f"../data/{esp}/aligot.csv", sep=";")
 
 # Change dtype
 df["Data_obs"] = pd.to_datetime(df["Data_obs"])
@@ -18,7 +18,7 @@ df["year"] = df["Data_obs"].dt.year
 if esp in ["abellerol", "falsiot"]:
     df = df[df["year"] == 2022]
 
-df["name_month"] = df.apply(lambda row: f"falsiot_{row['month']}", axis=1)
+df["name_month"] = df.apply(lambda row: f"oreneta_v_{row['month']}", axis=1)
 
 
 df = df[(2 <= df["month"]) & (df["month"] <= 6)]
@@ -60,7 +60,7 @@ df["y_UTM"] = y_utm_list
 # # Save dataframe in csv file.
 
 df = df[["name_month", "x_UTM", "y_UTM"]]
-df.to_csv(f"data/falsiot/falsiot_maxent.csv", index=False)
+df.to_csv(f"data/oreneta_v/oreneta_v_maxent.csv", index=False)
 
 
 
