@@ -1,5 +1,4 @@
-# MaxEnt_Cat
-MaxEnt-based modelling of spatial-temporal patterns of migratory birds in Catalonia during the prenuptial period
+# MaxEnt-based modelling of spatial-temporal patterns of migratory birds in Catalonia during the prenuptial period
 
 Abstract
 
